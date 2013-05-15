@@ -46,7 +46,7 @@ var pgutil = {
     {
         'use strict';
         
-        return ((obj != null) ? ((typeof(obj) != 'undefined') ? ((obj !== '') ? true : false) : false) : false);
+        return ((obj !== null) ? ((typeof(obj) !== 'undefined') ? ((obj !== '') ? true : false) : false) : false);
     },
     
     /** 
@@ -175,6 +175,44 @@ var pgutil = {
             else var expires = "";
             document.cookie = PG.Config.ns + '.' + name + "=" + encodeURIComponent(value) + expires + "; path=/";
         }
+    },
+        
+    /**
+     * Generate unique id for anonymous user
+     * @function
+     * 
+     * @name PG.Util.GenerateUniqueId
+     * 
+     * @param {null}
+     * @return {String} id
+     * 
+     * @this {User}
+     * 
+     * @example
+     * PG.User.GenerateUniqueId()
+     * 
+     * @since version 1.0.0
+     */
+    GenerateUniqueId: function ()
+    {
+        var uui = PG.Util.readCookie('unique-id'),
+            checkSum;
+        
+        if(!PG.Util.not_null(uui)) {
+            checkSum = function (arr)
+            {
+                var arrReturn = '', i, j, tmp;
+                for (i = arr.length - 1; i > 0; i--) {
+                    arrReturn += arr.charAt( Math.floor(Math.random() * (i + 1)) );
+                    arrReturn += arr.charAt(i);
+                }
+                return arrReturn.slice(0, 20);
+            }( 'abcdefghijklmnopkrstuvwxyz*-()#&' + new Date().getTime() );
+            
+            PG.Util.createCookie('unique-id', checkSum);
+        }
+        PG.User.uid = uui;
+        return uui;
     },
     
     /**
