@@ -6,17 +6,25 @@
     <target name="compile">
         
         <jscomp compilationLevel="simple"
-    		prettyPrint="true"
-	    		warning="quiet"
-	    			debug="false"
-						output="js/pg.min.js">
+    		warning="quiet"
+    			debug="false"
+					output="js/compiled.min.js">
         
             <sources dir="js">
-    	        <file name="config.js"/>
+    	        <!--file name="config.js" /-->
     	        <file name="namespace.js"/>
     	        <file name="util.js"/>
     	        <file name="init.js"/>
             </sources>
         </jscomp>
+
+	    <filelist id="filelist" dir="js">
+	        <file name="config.js" />
+	        <file name="compiled.min.js" />
+	    </filelist>
+    	
+	    <concat destfile="js/pg.min.js" encoding="UTF-8" outputencoding="UTF-8" fixlastline="true">
+	        <filelist refid="filelist" />
+	    </concat>
     </target>
 </project>
