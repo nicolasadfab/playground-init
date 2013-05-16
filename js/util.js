@@ -211,7 +211,9 @@ var pgutil = {
             
             PG.Util.createCookie('unique-id', checkSum);
         }
-        PG.User.uid = uui;
+        if(PG.Util.not_null(PG.User)) {
+            PG.User.uid = uui;
+        }
         return uui;
     },
     
