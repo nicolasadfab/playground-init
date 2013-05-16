@@ -199,7 +199,7 @@ var pgutil = {
             checkSum;
         
         if(!PG.Util.not_null(uui)) {
-            checkSum = function (arr)
+            uui = function (arr)
             {
                 var arrReturn = '', i, j, tmp;
                 for (i = arr.length - 1; i > 0; i--) {
@@ -209,7 +209,7 @@ var pgutil = {
                 return arrReturn.slice(0, 20);
             }( 'abcdefghijklmnopkrstuvwxyz*-()#&' + new Date().getTime() );
             
-            PG.Util.createCookie('unique-id', checkSum);
+            PG.Util.createCookie('unique-id', uui);
         }
         if(PG.Util.not_null(PG.User)) {
             PG.User.uid = uui;
