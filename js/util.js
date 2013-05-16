@@ -61,7 +61,7 @@ var pgutil = {
      * @this {Util}
      * 
      * @example
-     * PG.Util.checkXpath( {String} xpath )
+     * PG.Util.getObjectFromXpath( {String} xpath )
      * 
      * @since version 1.0.0
      */

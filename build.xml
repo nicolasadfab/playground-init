@@ -11,8 +11,8 @@
 					output="js/compiled.min.js">
         
             <sources dir="js">
-    	        <!--file name="config.js" /-->
     	        <file name="namespace.js"/>
+    	        <file name="cache.js"/>
     	        <file name="util.js"/>
     	        <file name="init.js"/>
             </sources>
