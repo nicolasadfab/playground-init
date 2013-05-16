@@ -26,5 +26,7 @@
 	    <concat destfile="js/pg.min.js" encoding="UTF-8" outputencoding="UTF-8" fixlastline="true">
 	        <filelist refid="filelist" />
 	    </concat>
+    	
+    	<delete file="js/compiled.min.js"/>
     </target>
 </project>
