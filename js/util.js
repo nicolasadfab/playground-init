@@ -128,16 +128,15 @@ var pgutil = {
     getValueFromObject: function (obj)
     {
         'use strict';
-        
         var value = '';
-        if(PG.Util.not_null(obj) && typeof obj == 'object' && obj.type != undefined) {
-            if(obj.value != undefined) {
+        if(PG.Util.not_null(obj) && typeof obj === 'object') {
+            if(obj.value !== undefined) {
                 value = obj.value;
-            }else if(obj.innerHTML != undefined) {
+            }else if(obj.innerHTML !== undefined) {
                 value = obj.innerHTML;
             }
         }
-        return value;
+        return value.replace(/^\s+/g,'').replace(/\s+$/g,'');
     },
     
     /**
