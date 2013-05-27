@@ -50,6 +50,37 @@ var pgutil = {
     },
     
     /** 
+     * Check if given variable points : {x:x, y:y} are into box {x:x, y:y, width:width, height:height}
+     * @function 
+     * 
+     * @name PG.Util.pointOnBox
+     * 
+     * @param {Object} point (x, y)
+     * @param {Object} box (x, y, width, height)
+     * @return {boolean} bool true or false  
+     * 
+     * @this {Util}
+     * 
+     * @example
+     * PG.Util.pointOnBox( {x:x, y:y}, {x:x, y:y, width:width, height:height} )
+     * 
+     * @since version 1.0.0
+     */
+    pointOnBox: function (point, box)
+    {
+        'use strict';
+        var bool = false;
+        
+        if(point.x > box.x && point.x < parseInt(box.x + box.width, 10)) {
+            if(point.y > box.y && point.y < parseInt(box.y + box.height, 10)) {
+                bool = true;
+            }
+        }
+        
+        return bool;
+    },
+    
+    /** 
      * Return object from given xpath
      * @function 
      * 
