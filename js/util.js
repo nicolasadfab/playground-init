@@ -337,7 +337,7 @@ var pgutil = {
         'use strict';
         try {
             url = eval(url);
-            return (url.test(top.location.href));
+            return (url.test(window.location.href));
         }catch (e) {
             return false;
         }
