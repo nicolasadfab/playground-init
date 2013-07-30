@@ -37,16 +37,16 @@ var Adfab = Adfab || {},
             mouth: false
         },
         scripts: {
-            xpath: '//192.168.1.103/playground-init/js/lib/wgxpath.install.js',
-            json: '//192.168.1.103/playground-init/js/lib/json2.js',
-            ears: '//192.168.1.103/plaground-ears/js/ears.min.js',
+            xpath: '//localhost/playground-init/js/lib/wgxpath.install.js',
+            json: '//localhost/playground-init/js/lib/json2.js',
+            ears: '//localhost/playground-ears/js/ears.min.js',
             mouth: '//ic.adfab.fr/mouthnode/leaderboard/others/client-0/script/pg.connect.js'
         },
         debug: true,
         mode: 'dev',
         env: {
         	dev: {
-		        url: '192.168.1.103/plaground-ears/',
+		        url: 'localhost/playground-ears/',
 		        send: 'send.php',
 		        connect: 'connect.php'
         	},
