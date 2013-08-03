@@ -124,7 +124,7 @@ var pgutil = {
      * 
      * @name createShape
      * 
-     * @param {String} box (x, y, width, height) 
+     * @param {String} box (x, y, width, height)  
      * @return {null}
      * 
      * @this {Util}
@@ -136,7 +136,6 @@ var pgutil = {
      */
     createShape: function (box)
     {
-    	alert("test")
     	var div = document.createElement("div");
     	div.style.position = "absolute";
     	div.style.top = box.y + "px";
