@@ -146,6 +146,34 @@ var pgutil = {
 
     	document.body.appendChild(div);
     },
+
+    /** 
+     * Return offset left and top 
+     * @function 
+     * 
+     * @name getOffset
+     * 
+     * @param {Object} Html element
+     * @return {Object} {x, y}
+     * 
+     * @this {Util}
+     * 
+     * @example
+     * createShape( {Object} box )
+     * 
+     * @since version 1.0.0
+     */
+    getOffset : function ( el )
+    {
+        var _x = 0;
+        var _y = 0;
+        while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+            _x += el.offsetLeft - el.scrollLeft;
+            _y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+        return { x: _y, y: _x };
+    },
     
     /** 
      * Return true if xpath is found
