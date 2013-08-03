@@ -172,7 +172,7 @@ var pgutil = {
             _y += el.offsetTop - el.scrollTop;
             el = el.offsetParent;
         }
-        return { x: _y, y: _x };
+        return { x: _x, y: _y };
     },
     
     /** 
