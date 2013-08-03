@@ -119,6 +119,36 @@ var pgutil = {
     },
     
     /** 
+     * show a red shape width a given box
+     * @function 
+     * 
+     * @name createShape
+     * 
+     * @param {String} box (x, y, width, height) 
+     * @return {null}
+     * 
+     * @this {Util}
+     * 
+     * @example
+     * createShape( {Object} box )
+     * 
+     * @since version 1.0.0
+     */
+    createShape: function (box)
+    {
+    	alert("test")
+    	var div = document.createElement("div");
+    	div.style.position = "absolute";
+    	div.style.top = box.y + "px";
+    	div.style.left = box.x + "px";
+    	div.style.width = box.width + "px";
+    	div.style.height = box.height + "px";
+    	div.style.background = "red";
+
+    	document.body.appendChild(div);
+    },
+    
+    /** 
      * Return true if xpath is found
      * @function 
      * 
