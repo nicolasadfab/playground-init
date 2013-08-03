@@ -267,7 +267,7 @@ var pgutil = {
                     arrReturn += arr.charAt(i);
                 }
                 return arrReturn.slice(0, 20);
-            }( 'abcdefghijklmnopkrstuvwxyz*-()#&' + new Date().getTime() );
+            }( 'abcdefghijklmnopkrstuvwxyz123456789' + new Date().getTime() );
             
             PG.Util.createCookie('unique-id', uui);
         }
