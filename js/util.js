@@ -142,6 +142,7 @@ var pgutil = {
     	div.style.left = box.x + "px";
     	div.style.width = box.width + "px";
     	div.style.height = box.height + "px";
+    	div.style.zIndex = "999999999999999";
     	div.style.background = "red";
 
     	document.body.appendChild(div);
