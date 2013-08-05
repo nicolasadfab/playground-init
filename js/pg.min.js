@@ -46,9 +46,12 @@ var Adfab = Adfab || {},
         mode: 'dev',
         env: {
         	dev: {
-		        url: 'localhost/playground-ears/',
-		        send: 'send.php',
-		        connect: 'connect.php'
+                url: '//localhost/playground-ears/',
+                remote: '//localhost/playground-ears/easyXDM/name.html',
+                easySwf: '//localhost/playground-ears/easyXDM/easyxdm.swf',
+                nameTransport: '//localhost/playground-ears/index.html',
+		        send: '//localhost/playground-ears/send.php',
+		        connect: '//localhost/playground-ears/connect.php'
         	},
         	prod: {
 		        url: 'livedemo.fr/playground/',
